@@ -27,7 +27,7 @@ def operation():
     elif operation_type == 'multiplication':
         result = x * y
 
-    return jsonify({"slackUsername": "yuguda999","result": result, "operation_type": operation_type})
+    return jsonify(result={"slackUsername": "yuguda999","result": result, "operation_type": operation_type})
 
 
 if __name__ == "__main__":
