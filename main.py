@@ -17,10 +17,9 @@ def user():
 @app.route("/math", methods=["POST"])
 def operation():
     result=0
-    operation_type = request.args.get('operation_type')
-    x = int(request.args.get('x'))
-    y = int(request.args.get('y'))
-    #y = request.form.get('y')
+    operation_type = request.get_json()['operation_type']
+    x = int(request.get_json()['x'])
+    y = int(request.get_json()['y'])
     if operation_type == 'addition':
         result = x + y
     elif operation_type == 'subtraction':
@@ -28,7 +27,7 @@ def operation():
     elif operation_type == 'multiplication':
         result = x * y
 
-    return jsonify({"slackUsername": "yuguda999","result": result, "operation_type": operation_type})
+    return {"slackUsername": "yuguda999","result": result, "operation_type": operation_type}, 200
 
 
 if __name__ == "__main__":
