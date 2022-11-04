@@ -17,9 +17,12 @@ def user():
 @app.route("/math", methods=["POST"])
 def operation():
     result=0
-    operation_type = request.args.get('operation_type')
-    x = int(request.args.get('x'))
-    y = int(request.args.get('y'))
+    # operation_type = request.args.get('operation_type')
+    # x = int(request.args.get('x'))
+    # y = int(request.args.get('y'))
+    operation_type = request.form.get('operaton_type')
+    x = request.form.get('x')
+    y = request.form.get('y')
     if operation_type == 'addition':
         result = x + y
     elif operation_type == 'subtraction':
