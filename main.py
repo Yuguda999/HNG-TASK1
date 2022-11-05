@@ -21,11 +21,11 @@ def operation():
     splited_operatiion_type = operation_type.lower().split(' ')
     x = int(request.get_json()['x'])
     y = int(request.get_json()['y'])
-    if 'addition' in splited_operatiion_type or 'add' in splited_operatiion_type or 'plus' in splited_operatiion_type or '+' in splited_operatiion_type:
+    if 'addition' in splited_operatiion_type or 'add' in splited_operatiion_type or 'plus' in splited_operatiion_type or '+' in splited_operatiion_type or 'sum' in splited_operatiion_type:
         result = x + y
     elif 'subtraction' in splited_operatiion_type or 'subtract' in splited_operatiion_type or 'minus' in splited_operatiion_type or '-' in splited_operatiion_type:
         result = x - y
-    elif 'multiplication' in splited_operatiion_type or 'multiply' in splited_operatiion_type or 'times' in splited_operatiion_type or '*' in splited_operatiion_type:
+    elif 'multiplication' in splited_operatiion_type or 'multiply' in splited_operatiion_type or 'times' in splited_operatiion_type or '*' in splited_operatiion_type or 'product' in splited_operatiion_type:
         result = x * y
     else:
         result = "i can't understand the operation type"
